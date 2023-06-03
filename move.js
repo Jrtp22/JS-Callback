@@ -6,7 +6,7 @@ function move(element) {
         element.style.bottom = bottom + 'px'
     }
 
-    function moveWithArrowKeys(left, bottom) {
+    function moveWithArrowKeys(left, bottom, dudeGif) {
         let direction = null;
         let x = left;
         let y = bottom;
@@ -47,14 +47,12 @@ function move(element) {
             if (e.key === 'ArrowUp') {
                 direction = 'north';
             }
-
+            dudeGif(direction);
         })
-
-
-
         document.addEventListener('keyup', function (e) {
             direction = null
         })
+        dudeGif(direction);
     }
 
     return {
