@@ -22,6 +22,29 @@ character.style.left= x + 'px'
 character.style.bottom= y + 'px'
 }
 setInterval(moveDude, 1)
+document.addEventListener('keydown', function(e){
+    if (e.repeat) return;
+
+    if (e.key ==='ArrowLeft'){
+        direction = 'west';
+    }
+    if (e.key === 'ArrowDown'){
+        direction = 'south'
+    }
+    if (e.key === 'ArrowRight'){
+        direction = 'east'
+    }
+    if (e.key === 'ArrowUp'){
+        direction = 'north';
+    }
+
+})
+
+
+
+document.addEventListener('keyup', function(e){
+    direction = null
+})
 
 move(character).to(100, 250)
 
