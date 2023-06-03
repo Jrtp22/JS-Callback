@@ -2,51 +2,7 @@ const inventory = newInventory()
 move(inventory).to(0, 0)
 
 const character = newImage('assets/green-character/static.gif')
-let direction= null;
-let x = 100;
-let y= 250;
-function moveDude() {
-    if (direction === 'west') {
-    x= x - 1 
-}
-if (direction === 'south') {
-    y= y - 1 
-};
-if (direction === 'east') {
-    x= x + 1 
-};
-if (direction === 'north'){
-    y= y + 1 
-}
-character.style.left= x + 'px'
-character.style.bottom= y + 'px'
-}
-setInterval(moveDude, 1)
-document.addEventListener('keydown', function(e){
-    if (e.repeat) return;
-
-    if (e.key ==='ArrowLeft'){
-        direction = 'west';
-    }
-    if (e.key === 'ArrowDown'){
-        direction = 'south'
-    }
-    if (e.key === 'ArrowRight'){
-        direction = 'east'
-    }
-    if (e.key === 'ArrowUp'){
-        direction = 'north';
-    }
-
-})
-
-
-
-document.addEventListener('keyup', function(e){
-    direction = null
-})
-
-move(character).to(100, 250)
+move(character).withArrowKeys(100, 250)
 
 
 move(newImage('assets/tree.png')).to(200, 450)
