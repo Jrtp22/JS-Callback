@@ -21,7 +21,7 @@ if (direction === 'north'){
 character.style.left= x + 'px'
 character.style.bottom= y + 'px'
 }
-
+setInterval(moveDude, 1)
 
 move(character).to(100, 250)
 
